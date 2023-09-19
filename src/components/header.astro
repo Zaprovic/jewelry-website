@@ -1,0 +1,159 @@
+---
+import HamburguerMenu from "./icons/hamburguer-menu.astro";
+import Search from "./icons/search.astro";
+import ShoppingCart from "./icons/shopping-cart.astro";
+import User from "./icons/user.astro";
+---
+
+
+<header>
+    
+    <span class="hamburguer-menu">
+        <HamburguerMenu/>
+    </span>
+
+    <span class="logo-desktop">
+        <strong>LOGO</strong>
+    </span>
+    
+    <div class="logo-navbar-container"> 
+        <span class="logo-mobile"><strong>LOGO</strong></span>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Shop</a>
+                </li>
+                <li>
+                    <a href="#">Guys</a>
+                </li>
+                <li>
+                    <a href="">Welded Jewerly</a></li>
+                <li>
+                    <a href="">About</a></li>
+                <li>
+                    <a href="">Join</a></li>
+                <li>
+                    <a href="">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <ul>
+        <li>
+            <User>
+        </li>
+        <li>
+            <Search>
+        </li>
+
+        <li>
+            <ShoppingCart>  
+        </li>
+    </ul>
+</header>
+
+<style>
+
+    header {
+        display: flex;
+        align-items: center;
+        font-size: 3.6rem;
+        padding: 4rem;
+        background: #ede8e7;
+        justify-content: space-between;
+        font-family: 'Libre Bodoni', serif;
+    }
+
+    .logo-navbar-container {
+        display: flex;
+        align-items: center;
+        /* width: 100%; */
+    }
+
+    .logo-navbar-container nav {
+        display: none;
+    }
+
+    .logo-navbar-container nav ul {
+        display: flex;
+    }
+
+    header > ul {
+        display: flex;
+        gap: 3.6rem;
+
+    }
+
+    header > ul li {
+        width: 20px;
+        height: auto;
+        cursor: pointer;
+    }
+
+    .hamburguer-menu {
+        width: 20px;
+        height: auto;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+    }
+    
+    .logo-desktop {
+        display: none;
+    }
+
+    .logo-mobile {
+        margin-left: 12rem;
+    }
+
+
+    /* responsive */
+    @media (min-width: 1200px)  {
+
+        header {
+            padding-inline: 5.2rem;
+        }
+        .logo-navbar-container nav {
+            display: flex;
+        }
+
+        .hamburguer-menu {
+            display: none;
+        }
+
+        .logo-navbar-container {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .logo-navbar-container nav ul {
+            gap: 6.4rem;
+        }
+
+        .logo-navbar-container nav ul li {
+            padding: 1.2rem;
+            font-weight: lighter;
+            transition: all ease 0.3s;
+        }
+
+        .logo-navbar-container nav ul li:hover {
+            background-color: #cdd9d0;
+            border-radius: 1rem;
+            transform: scale(1.15);
+
+        }
+
+        .logo-mobile {
+            display: none;
+        }
+
+        .logo-desktop {
+            display: inline-block;
+            font-size: 2.4rem;
+        }
+
+    } 
+
+    
+</style>
