@@ -1,5 +1,6 @@
 ---
 import SectionOne from '../components/sections/section-one.astro';
+import SectionCarousell from './sections/section-carousell.astro';
 import SectionTwo from './sections/section-two.astro';
 ---
 
@@ -9,9 +10,7 @@ import SectionTwo from './sections/section-two.astro';
 
     <SectionTwo/>
 
-
-
-    
+    <SectionCarousell/>
 </main>
 
 
@@ -20,6 +19,12 @@ import SectionTwo from './sections/section-two.astro';
         display: flex;
         flex-direction: column;
         gap: 20rem;
+    }
+
+    @media(min-width: 678px){
+        main {
+            gap: 0;
+        }
     }
 </style>
 
