@@ -1,3 +1,8 @@
+---
+import { Image } from 'astro:assets';
+import fashion02 from '../../images/fashion-02.jpg';
+---
+
 <section>
     <div class="title-container">
         <p>Basic and exquisite</p>
@@ -5,7 +10,7 @@
     </div>
 
     <figure>
-        <img src="../../../public/images/fashion-02.jpg" alt="Gold Ring">
+        <Image src={fashion02} alt="Description here of image 2"/>
     </figure>
 
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, voluptatum dolorem molestiae itaque ab totam voluptatibus consectetur rerum sunt suscipit ipsum esse illo commodi temporibus maxime id ullam aliquid? Minima.</p>
