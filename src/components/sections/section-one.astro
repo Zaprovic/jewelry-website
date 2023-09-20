@@ -1,16 +1,22 @@
+---
+import { Image } from 'astro:assets';
+import fashionImage from '../../images/fashion-01.jpg';
+import logoImage from '../../images/milano-joyeria.jpg';
+---
+
 <section>
     <figure>
-        <img src="../../../public/images/fashion-01.jpg" alt="">
+        <Image src={fashionImage} alt="Description here"/>
     </figure>
-
+    
     <div class="title-container">
         <!-- <h1>
             <span>Milano</span>
             <span>Joyeria</span>
         </h1> -->
-
+        
         <figure class="milano-joyeria">
-            <img src="../../public/images/milano-joyeria.jpg" alt="Milano Joyeria Logo">
+            <Image src={logoImage} alt="Description of logo"/>
         </figure>
 
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia nisi consequuntur repellendus assumenda molestiae quam nemo voluptate reprehenderit asperiores? Sit dicta voluptatem ipsa perspiciatis illo molestiae doloribus ab architecto ipsum!</p>
