@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import image01 from '../../assets/necklace/image-03.jpg';
+import image01 from '../../assets/necklace/image-01.jpg';
 import logoImage from '../../images/milano-joyeria.jpg';
 ---
 
@@ -50,7 +50,8 @@ import logoImage from '../../images/milano-joyeria.jpg';
     figure img {
         width: 100%;
         max-width: 678px;
-        height: auto;
+        height: 70%;
+        object-fit: cover;
     }
 
     h1 {
@@ -80,7 +81,7 @@ import logoImage from '../../images/milano-joyeria.jpg';
         border-radius: 100000rem;
     }
 
-    @media (min-width: 678px) {
+    @media (min-width: 512px) {
         section {
             display: grid;
             grid-template-columns: repeat(2,1fr);
