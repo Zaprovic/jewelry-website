@@ -1,0 +1,99 @@
+---
+import { Image } from 'astro:assets';
+import bracelets from '../../assets/bracelet/image-16.jpg';
+import earrings from '../../assets/earring/image-09.jpg';
+import necklaces from '../../assets/necklace/image-04.jpg';
+import rings from '../../assets/ring/image-11.jpg';
+---
+
+
+<section>
+    <h2>Shop by category</h2>
+
+    <div class="grid-container">
+        <div class="card">
+            <figure>
+                <Image src={bracelets} alt={"Bracelet image"}/>
+            </figure>
+
+            <button>
+                <h4>Bracelets</h4>
+            </button>
+        </div>
+
+        <div class="card">
+            <figure>
+                <Image src={necklaces} alt={"Bracelet image"}/>
+            </figure>
+
+            <button>
+                <h4>Necklaces</h4>
+            </button>
+        </div>
+
+        <div class="card">
+            <figure>
+                <Image src={earrings} alt={"Bracelet image"}/>
+            </figure>
+
+            <button>
+                <h4>Earrings</h4>
+            </button>
+        </div>
+
+        <div class="card">
+            <figure>
+                <Image src={rings} alt={"Bracelet image"}/>
+            </figure>
+            
+            <button>
+                <h4>Rings</h4>
+            </button>
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 8rem;
+    }
+
+    h4 {
+        font-size: 4.8rem;
+        border: 1px solid gray;
+        padding: 1.6rem 4rem;
+        width: fit-content;
+        border-radius: 0.2em;   
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 20px;
+        grid-auto-rows: 1fr;
+    } 
+
+    .grid-container .card figure {
+        padding: 4rem;
+    }
+
+    .grid-container .card figure img {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        border-radius: 2.8rem;
+    }
+
+
+
+
+</style>
+
