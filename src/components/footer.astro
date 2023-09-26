@@ -1,0 +1,166 @@
+---
+import { Image } from 'astro:assets';
+import Logo from '../images/milano-joyeria.jpg';
+---
+
+<footer>
+	<div class="grid-col">
+		<figure><Image src={Logo} alt={"Logo of the company"}/></figure>
+	</div>
+
+	<div class="grid-col">
+		<h3>To the buyer</h3>
+
+		<ul>
+			<li>
+				<a href="#">Payment and delivery</a>
+			</li>
+			<li>
+				<a href="#">Exchange and return</a>
+			</li>
+			<li>
+				<a href="#">Privacy Policy </a>
+			</li>
+			<li>
+				<a href="#">Shops</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="grid-col">
+		<h3>About</h3>
+
+		<ul>
+			<li>
+				<a href="#"> About us </a>
+			</li>
+			<li>
+				<a href="#"> SOVA Club </a>
+			</li>
+			<li>
+				<a href="#"> Contract offers </a>
+			</li>
+			<li><a href="#"> Contacts </a></li>
+		</ul>
+	</div>
+
+	<div class="grid-col">
+		<h3>Catalog</h3>
+
+		<ul>
+			<li>
+				<a href="">Jewelry</a>
+			</li>
+			<li>
+				<a href="">Collections</a>
+			</li>
+			<li>
+				<a href="">Outlet</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="grid-col work-time">
+		<h3>Work time</h3>
+
+		<ul>
+			<li>Mon-Th - 9:00 to 20:00</li>
+			<li>Fri - 9:00 to 19:00</li>
+			<li>Sat - 9:00 to 17:00</li>
+		</ul>
+	</div>
+
+	<div class="grid-col">
+		<h3>Subscribe to our newsletter</h3>
+
+		<form action="#" method="POST">
+			<label for="">Subscribe</label>
+			<input type="email" placeholder="Your email here" />
+		</form>
+
+		<ul>
+			<li>
+				<a href="#">Facebook</a>
+			</li>
+			<li>
+				<a href="#">Instagram</a>
+			</li>
+			<li><a href="#">LinkedIn</a></li>
+		</ul>
+	</div>
+</footer>
+
+<style>
+	footer {
+		background: #1f1f1b;
+		color: white;
+		font-size: 3.2rem;
+		padding: 10rem 5.2rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+        row-gap: 10rem;
+        column-gap: 2rem;
+	}
+
+	footer > .grid-col:first-child {
+		display: none;
+	}
+
+	.grid-col {
+		display: flex;
+		flex-direction: column;
+		gap: 3.6rem;
+	}
+
+	.grid-col ul {
+		display: flex;
+		flex-direction: column;
+		gap: 3.6rem;
+	}
+
+	.grid-col:not(.work-time) ul li {
+		cursor: pointer;
+	}
+
+	h3 {
+		font-size: 5.2rem;
+	}
+
+	figure {
+		display: none;
+	}
+    
+    form {
+        display: flex;
+        gap: 2.4rem;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+
+    label {
+        background-color: gray;
+        display: grid;
+        place-items: center;
+    }
+
+    input {
+        width: 100%;
+        max-width: 240px;
+    }
+    
+    input, label {
+        padding: 1.2rem 2.4rem;
+        border-radius: 1.2rem;
+        /* width: 100px; */
+    }
+
+	figure img {
+		width: 40%;
+		min-width: 160px;
+		max-width: 240px;
+		aspect-ratio: 1/1;
+		height: auto;
+		object-fit: cover;
+		border-radius: 10000rem;
+	}
+</style>
