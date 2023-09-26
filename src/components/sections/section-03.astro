@@ -60,6 +60,7 @@ import rings from '../../assets/ring/image-11.jpg';
 
     h2 {
         font-size: 8rem;
+        margin-bottom: 3.2rem;
     }
 
     h4 {
@@ -76,13 +77,18 @@ import rings from '../../assets/ring/image-11.jpg';
 
     .grid-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
         grid-gap: 20px;
         grid-auto-rows: 1fr;
     } 
 
     .grid-container .card figure {
         padding: 4rem;
+        transition: all ease 0.3s;
+    }
+
+    .grid-container .card figure:hover{
+        transform: scale(0.98);
     }
 
     .grid-container .card figure img {
