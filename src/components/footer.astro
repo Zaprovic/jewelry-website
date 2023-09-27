@@ -1,6 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import Logo from '../images/milano-joyeria.jpg';
+import Facebook from './icons/facebook.astro';
+import Instagram from './icons/instagram.astro';
+import LikedIn from './icons/linkedin.astro';
 ---
 
 <footer>
@@ -55,18 +58,29 @@ import Logo from '../images/milano-joyeria.jpg';
 		<h3>Subscribe to our newsletter</h3>
 
 		<form action="#" method="POST">
-			<label for="">Subscribe</label>
+			<button type="submit">Subscribe</button>
 			<input type="email" placeholder="Your email here" />
 		</form>
 
-		<ul>
+		<ul class="social-links">
 			<li>
-				<a href="#">Facebook</a>
+				<span>
+					<a href="#">
+						<Facebook/>
+					</a>
+				</span>
 			</li>
 			<li>
-				<a href="#">Instagram</a>
+				<a href="#">
+					<Instagram/>
+
+				</a>
 			</li>
-			<li><a href="#">LinkedIn</a></li>
+			<li>
+				<a href="#">
+					<LikedIn/>
+				</a>
+			</li>
 		</ul>
 	</div>
 </footer>
@@ -93,7 +107,7 @@ import Logo from '../images/milano-joyeria.jpg';
 		gap: 3.6rem;
 	}
 
-	.grid-col ul {
+	.grid-col > ul:not(.social-links) {
 		display: flex;
 		flex-direction: column;
 		gap: 3.6rem;
@@ -118,10 +132,11 @@ import Logo from '../images/milano-joyeria.jpg';
         justify-content: flex-end;
     }
 
-    label {
+    button {
         background-color: gray;
         display: grid;
         place-items: center;
+		cursor: pointer;
     }
 
     input {
@@ -129,7 +144,7 @@ import Logo from '../images/milano-joyeria.jpg';
         max-width: 240px;
     }
     
-    input, label {
+    input, button {
         padding: 1.2rem 2.4rem;
         border-radius: 1.2rem;
         /* width: 100px; */
@@ -144,4 +159,19 @@ import Logo from '../images/milano-joyeria.jpg';
 		object-fit: cover;
 		border-radius: 10000rem;
 	}
+
+	.social-links {
+		margin-top: 4rem;
+		display: flex;
+		gap: 2.4rem;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.social-links span {
+		width: 40px;
+		height: auto;
+	}
+
+
 </style>
