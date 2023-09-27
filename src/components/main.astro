@@ -1,31 +1,31 @@
 ---
+import Aside from './aside.astro';
 import SectionOne from './sections/section-01.astro';
 import SectionTwo from './sections/section-02.astro';
 import Section03 from './sections/section-03.astro';
 ---
 
-
 <main>
-    <SectionOne/>
+	<Aside />
 
-    <SectionTwo/>
+	<SectionOne />
 
-    <Section03/>
+	<SectionTwo />
+
+	<Section03 />
 </main>
 
-
 <style>
-    main {
-        display: flex;
-        flex-direction: column;
-        gap: 12rem;
-        margin-bottom: 8rem;
-    }
+	main {
+		display: flex;
+		flex-direction: column;
+		gap: 12rem;
+		margin-bottom: 8rem;
+	}
 
-    @media(min-width: 678px){
-        main {
-            gap: 0;
-        }
-    }
+	@media (min-width: 678px) {
+		main {
+			gap: 0;
+		}
+	}
 </style>
-
