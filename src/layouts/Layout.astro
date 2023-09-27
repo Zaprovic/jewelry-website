@@ -6,19 +6,21 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+		<meta name="generator" content="{Astro.generator}" />
 		<title>{title}</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
-
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
 		<slot />
@@ -26,11 +28,21 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
+	#overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.5);
+		display: none;
+		filter: blur(5px);
+	}
 	:root {
-		--clr-dusty-rose: #DACAC4;
-		--clr-scallop-seashell: #F7C9B6;
-		--clr-beige: #DBC39A;
-		--clr-seafoam-green:#DAE7DD;
+		--clr-dusty-rose: #dacac4;
+		--clr-scallop-seashell: #f7c9b6;
+		--clr-beige: #dbc39a;
+		--clr-seafoam-green: #dae7dd;
 	}
 	* {
 		margin: 0;
@@ -72,6 +84,39 @@ const { title } = Astro.props;
 		font-size: 26.5%;
 	}
 	body {
-        font-family: 'Libre Franklin', serif;
+		font-family: "Libre Franklin", serif;
+	}
+
+	body.show-aside {
+		overflow: hidden;
 	}
 </style>
+
+
+<script>
+    const hamburguerMenu = document.querySelector('.hamburguer-menu');
+    const xMark = document.querySelector('.x-mark');
+    const aside = document.querySelector('aside');
+	const overlay = document.getElementById('overlay');
+
+    hamburguerMenu?.addEventListener('click', () => {
+        aside?.classList.toggle('show');
+
+		if(overlay){
+			overlay.style.display = 'inline-block';
+		}
+		
+		document.body.classList.add('show-aside');
+    });
+
+    xMark?.addEventListener('click', () => {
+        aside?.classList.toggle('show');
+
+		if(overlay){
+			overlay.style.display = 'none';
+		}
+
+		document.body.classList.remove('show-aside');
+    });
+
+</script>
