@@ -1,14 +1,22 @@
 ---
+import Aside from '../components/aside.astro';
 import Footer from '../components/footer.astro';
-import Header from '../components/header.astro';
 import Main from '../components/main.astro';
+import Section01 from '../components/sections/section-01.astro';
+import Section02 from '../components/sections/section-02.astro';
+import Section03 from '../components/sections/section-03.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Welcome to Astro.">
-	<Header />
+<Layout title="Milano Joyeria">
+	<Main>
+		<Aside />
 
-	<Main />
+		<Section01 />
 
+		<Section02 />
+
+		<Section03 />
+	</Main>
 	<Footer />
 </Layout>

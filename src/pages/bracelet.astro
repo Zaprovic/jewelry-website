@@ -1,0 +1,95 @@
+---
+import { Image } from 'astro:assets';
+import Layout from "../layouts/Layout.astro";
+
+import image01 from '../assets/bracelet/image-16.jpg';
+import image02 from '../assets/bracelet/image-17.jpg';
+import image03 from '../assets/bracelet/image-27.jpg';
+import image04 from '../assets/bracelet/image-28.jpg';
+import image05 from '../assets/bracelet/image-34.jpg';
+
+
+import glob from 'glob';
+import Aside from '../components/aside.astro';
+import Main from '../components/main.astro';
+
+const images = glob.sync('../assets/bracelet/*.jpg').map(path => import(path));
+---
+
+<Layout title="Bracelets">
+
+    <Main>
+        <Aside/>
+        <h1>Bracelets</h1>
+    
+        <div class="grid-container">
+    
+                    <div class="card">
+                        <figure>
+                            <Image src={image01} alt={"image"}/>
+                        </figure>
+                    </div>
+    
+                    <div class="card">
+                        <figure>
+                            <Image src={image02} alt={"image"}/>
+                        </figure>
+                    </div>
+    
+                    <div class="card">
+                        <figure>
+                            <Image src={image03} alt={"image"}/>
+                        </figure>
+                    </div>
+    
+                    <div class="card">
+                        <figure>
+                            <Image src={image04} alt={"image"}/>
+                        </figure>
+                    </div>
+    
+                    <div class="card">
+                        <figure>
+                            <Image src={image05} alt={"image"}/>
+                        </figure>
+                    </div>
+    
+        </div>
+    </Main>
+
+
+</Layout>
+
+<style is:global>
+
+    h1 {
+        text-align: center;
+        font-size: 5.2rem;
+        margin-top: 4rem;
+        font-weight: bold;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
+        grid-auto-rows: 1fr;
+    } 
+
+    .grid-container .card figure {
+        padding: 4rem;
+        transition: all ease 0.3s;
+    }
+
+    .grid-container .card figure:hover{
+        transform: scale(0.98);
+    }
+
+    .grid-container .card figure img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        border-radius: 2rem;
+    }
+
+</style>
+
