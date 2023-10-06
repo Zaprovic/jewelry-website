@@ -9,11 +9,9 @@ import image04 from '../assets/bracelet/image-28.jpg';
 import image05 from '../assets/bracelet/image-34.jpg';
 
 
-import glob from 'glob';
 import Aside from '../components/aside.astro';
 import Main from '../components/main.astro';
 
-const images = glob.sync('../assets/bracelet/*.jpg').map(path => import(path));
 ---
 
 <Layout title="Bracelets">

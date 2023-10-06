@@ -1,35 +1,15 @@
 ---
+import Aside from "../components/aside.astro";
+import Main from "../components/main.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Necklaces">
+
+    <Main>
+        <Aside/>
+        
+    </Main>
     
 </Layout>
 
-<script>
-    const hamburguerMenu = document.querySelector('.hamburguer-menu');
-    const xMark = document.querySelector('.x-mark');
-    const aside = document.querySelector('aside');
-	const overlay = document.getElementById('overlay');
-
-    hamburguerMenu?.addEventListener('click', () => {
-        aside?.classList.toggle('show');
-
-		if(overlay){
-			overlay.style.display = 'inline-block';
-		}
-		
-		document.body.classList.add('show-aside');
-    });
-
-    xMark?.addEventListener('click', () => {
-        aside?.classList.toggle('show');
-
-		if(overlay){
-			overlay.style.display = 'none';
-		}
-
-		document.body.classList.remove('show-aside');
-    });
-
-</script>
