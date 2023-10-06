@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+    imageName: ImageMetadata;
+    description: string
+}
+
+
+const {imageName,description} = Astro.props;
+---
+
+
+<div class="card">
+    <figure>
+        <Image src={imageName} alt={description}/>
+    </figure>
+</div>
+
+<style>
+
+    .card figure {
+        padding: 4rem 6rem;
+        transition: all ease 0.3s;
+    }
+
+    .card figure:hover{
+        transform: scale(0.98);
+    }
+
+    .card figure img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        border-radius: 2rem;
+    }
+</style>
