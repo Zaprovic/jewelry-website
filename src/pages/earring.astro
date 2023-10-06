@@ -1,16 +1,31 @@
 ---
 import Aside from "../components/aside.astro";
+import Card from "../components/card.astro";
+import ItemsContainer from "../components/items-container.astro";
 import Main from "../components/main.astro";
 import Layout from "../layouts/Layout.astro";
+
+import image01 from '../assets/earring/image-09.jpg';
 ---
 
 <Layout title="Earrings">
 
     <Main>
         <h1>Earrings</h1>
-        <Aside></Aside>
-    </Main>
+        <Aside/>
 
-    
+        <ItemsContainer>
+            <Card imageName={image01} description="image 01"/>
+        </ItemsContainer>
+    </Main>
 </Layout>
+
+<style>
+    h1 {
+        text-align: center;
+        font-size: 5.2rem;
+        margin-top: 4rem;
+        font-weight: bold;
+    }
+</style>
 

@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import Layout from "../layouts/Layout.astro";
 
 import image01 from '../assets/bracelet/image-16.jpg';
@@ -8,8 +7,9 @@ import image03 from '../assets/bracelet/image-27.jpg';
 import image04 from '../assets/bracelet/image-28.jpg';
 import image05 from '../assets/bracelet/image-34.jpg';
 
-
 import Aside from '../components/aside.astro';
+import Card from '../components/card.astro';
+import ItemsContainer from '../components/items-container.astro';
 import Main from '../components/main.astro';
 
 ---
@@ -19,40 +19,14 @@ import Main from '../components/main.astro';
     <Main>
         <Aside/>
         <h1>Bracelets</h1>
-    
-        <div class="grid-container">
-    
-                    <div class="card">
-                        <figure>
-                            <Image src={image01} alt={"image"}/>
-                        </figure>
-                    </div>
-    
-                    <div class="card">
-                        <figure>
-                            <Image src={image02} alt={"image"}/>
-                        </figure>
-                    </div>
-    
-                    <div class="card">
-                        <figure>
-                            <Image src={image03} alt={"image"}/>
-                        </figure>
-                    </div>
-    
-                    <div class="card">
-                        <figure>
-                            <Image src={image04} alt={"image"}/>
-                        </figure>
-                    </div>
-    
-                    <div class="card">
-                        <figure>
-                            <Image src={image05} alt={"image"}/>
-                        </figure>
-                    </div>
-    
-        </div>
+
+        <ItemsContainer>
+            <Card imageName={image01} description='image 01'/>
+            <Card imageName={image02} description='image 02'/>
+            <Card imageName={image03} description='image 03'/>
+            <Card imageName={image04} description='image 04'/>
+            <Card imageName={image05} description='image 05'/>
+        </ItemsContainer>
     </Main>
 
 
@@ -67,27 +41,6 @@ import Main from '../components/main.astro';
         font-weight: bold;
     }
 
-    .grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
-        grid-auto-rows: 1fr;
-    } 
-
-    .grid-container .card figure {
-        padding: 4rem;
-        transition: all ease 0.3s;
-    }
-
-    .grid-container .card figure:hover{
-        transform: scale(0.98);
-    }
-
-    .grid-container .card figure img {
-        width: 100%;
-        height: 320px;
-        object-fit: cover;
-        border-radius: 2rem;
-    }
 
 </style>
 

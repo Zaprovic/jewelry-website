@@ -1,14 +1,39 @@
 ---
 import Aside from "../components/aside.astro";
+import Card from "../components/card.astro";
+import ItemsContainer from "../components/items-container.astro";
 import Main from "../components/main.astro";
 import Layout from "../layouts/Layout.astro";
+
+import image01 from '../assets/ring/image-11.jpg';
+import image02 from '../assets/ring/image-12.jpg';
+import image03 from '../assets/ring/image-13.jpg';
+import image04 from '../assets/ring/image-14.jpg';
+import image05 from '../assets/ring/image-15.jpg';
 ---
 
 <Layout title="Rings">
     <Main>
         <h1>Rings</h1>
-        <Aside></Aside>
+        <Aside/>
+
+        <ItemsContainer>
+            <Card imageName={image01} description="Image 01"/>
+            <Card imageName={image02} description="Image 02"/>
+            <Card imageName={image03} description="Image 03"/>
+            <Card imageName={image04} description="Image 04"/>
+            <Card imageName={image05} description="Image 05"/>
+        </ItemsContainer>
     </Main>
     
 </Layout>
+
+<style>
+    h1 {
+        text-align: center;
+        font-size: 5.2rem;
+        margin-top: 4rem;
+        font-weight: bold;
+    }
+</style>
 
