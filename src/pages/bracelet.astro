@@ -1,17 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import image01 from '../assets/bracelet/image-16.jpg';
-import image02 from '../assets/bracelet/image-17.jpg';
-import image03 from '../assets/bracelet/image-27.jpg';
-import image04 from '../assets/bracelet/image-28.jpg';
-import image05 from '../assets/bracelet/image-34.jpg';
 
 import Aside from '../components/aside.astro';
 import Card from '../components/card.astro';
 import ItemsContainer from '../components/items-container.astro';
 import Main from '../components/main.astro';
 
+// import { bracelets } from "../stores/bracelets";
+import products from '../../public/data.json';
+
+const bracelets = products.filter((item)=> item.category === "Bracelet")
 ---
 
 <Layout title="Bracelets">
@@ -21,11 +20,13 @@ import Main from '../components/main.astro';
         <h1>Bracelets</h1>
 
         <ItemsContainer>
-            <Card imageName={image01} description='image 01' name="Bracelet 01" category="Bracelet" price="150"/>
-            <Card imageName={image02} description='image 02' name="Bracelet 01" category="Bracelet" price="150"/>
-            <Card imageName={image03} description='image 03' name="Bracelet 01" category="Bracelet" price="150"/>
-            <Card imageName={image04} description='image 04' name="Bracelet 01" category="Bracelet" price="150"/>
-            <Card imageName={image05} description='image 05' name="Bracelet 01" category="Bracelet" price="150"/>
+
+            {
+                bracelets.map((item)=>(
+                    <Card imageName={item.imageName} description={item.description} name={item.name} category={item.category} price={item.price}/>
+                ))
+            }
+
         </ItemsContainer>
     </Main>
 

@@ -1,10 +1,42 @@
 ---
+import Aside from "../components/aside.astro";
+import Card from "../components/card.astro";
+import ItemsContainer from "../components/items-container.astro";
+import Main from "../components/main.astro";
 import Layout from "../layouts/Layout.astro";
+import outputArray, { data } from "../../public/data"
+
+console.log(data.length)
+
 ---
 
 <Layout title="All">
+    <Main>
+        <Aside/>
+        <h1>All products</h1>
+
+        <ItemsContainer>
+
+            {
+                data.map((item,index)=>(
+                    <Card imageName={item.imageName} description={item.description} name={item.name} category={item.category} price={item.price} index={index + 1}/>
+                ))
+            }
+
+        </ItemsContainer>
+    </Main>
     
 </Layout>
+
+<style>
+    h1 {
+        text-align: center;
+        font-size: 5.2rem;
+        margin-top: 4rem;
+        font-weight: bold;
+    }
+
+</style>
 
 <script>
     const hamburguerMenu = document.querySelector('.hamburguer-menu');
