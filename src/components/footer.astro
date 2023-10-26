@@ -54,7 +54,7 @@ import LikedIn from './icons/linkedin.astro';
 		</ul>
 	</div>
 
-	<div class="grid-col">
+	<div class="grid-col newsletter">
 		<h3>Subscribe to our newsletter</h3>
 
 		<form action="#" method="POST">
@@ -160,6 +160,10 @@ import LikedIn from './icons/linkedin.astro';
 		border-radius: 10000rem;
 	}
 
+	.newsletter {
+		width: fit-content;
+	}
+
 	.social-links {
 		margin-top: 4rem;
 		display: flex;
@@ -171,6 +175,13 @@ import LikedIn from './icons/linkedin.astro';
 	.social-links span {
 		width: 40px;
 		height: auto;
+	}
+
+	@media (min-width: 675px) and (max-width:860px) {
+		.newsletter {
+			background: none;
+			width: 160%;
+		}
 	}
 
 
