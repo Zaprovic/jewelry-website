@@ -1,0 +1,36 @@
+---
+import LeftArrow from "../components/icons/left-arrow.astro";
+interface Props {
+    name:string
+}
+
+const {name} = Astro.props
+---
+
+
+<div class="title-container">
+    <button>
+        <a href="/">
+            <LeftArrow/>
+        </a>
+    </button>
+    <h1>
+        {name}
+    </h1>
+</div>
+
+<style>
+    h1 {
+        text-align: center;
+        font-size: 5.2rem;
+        font-weight: bold;
+    }
+
+    .title-container {
+        display: flex;
+        gap: 2rem;
+        margin-top: 4rem;
+        justify-content: center;
+
+    }
+</style>
