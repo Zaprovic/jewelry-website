@@ -1,15 +1,13 @@
 ---
 import Aside from "../components/aside.astro";
-import Card from "../components/card.astro";
 import ItemsContainer from "../components/items-container.astro";
 import Main from "../components/main.astro";
 import Layout from "../layouts/Layout.astro";
 
-import image01 from '../assets/ring/image-11.jpg';
-import image02 from '../assets/ring/image-12.jpg';
-import image03 from '../assets/ring/image-13.jpg';
-import image04 from '../assets/ring/image-14.jpg';
-import image05 from '../assets/ring/image-15.jpg';
+import { data } from "../../public/data";
+import Card from "../components/card.astro";
+
+const rings = data.filter(item => item.category === "Anillo")
 ---
 
 <Layout title="Rings">
@@ -18,11 +16,11 @@ import image05 from '../assets/ring/image-15.jpg';
         <Aside/>
 
         <ItemsContainer>
-            <Card imageName={image01} description="Image 01" name="Ring 01" category="Rings" price="150"/>
-            <Card imageName={image02} description="Image 02" name="Ring 01" category="Rings" price="150"/>
-            <Card imageName={image03} description="Image 03" name="Ring 01" category="Rings" price="150"/>
-            <Card imageName={image04} description="Image 04" name="Ring 01" category="Rings" price="150"/>
-            <Card imageName={image05} description="Image 05" name="Ring 01" category="Rings" price="150"/>
+            {
+                rings.map(item => (
+                    <Card description={item.description} imageName={item.imageName} category={item.category} name={item.name} price={item.price}/>
+                ))
+            }
         </ItemsContainer>
     </Main>
     

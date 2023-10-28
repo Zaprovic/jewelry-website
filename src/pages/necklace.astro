@@ -3,14 +3,12 @@ import Aside from "../components/aside.astro";
 import Main from "../components/main.astro";
 import Layout from "../layouts/Layout.astro";
 
-import image01 from "../assets/necklace/image-01.jpg";
-import image02 from "../assets/necklace/image-02.jpg";
-import image03 from "../assets/necklace/image-03.jpg";
-import image04 from "../assets/necklace/image-04.jpg";
-import image05 from "../assets/necklace/image-05.jpg";
-import image06 from "../assets/necklace/image-06.jpg";
-import Card from '../components/card.astro';
+import { data } from "../../public/data";
+import Card from "../components/card.astro";
 import ItemsContainer from '../components/items-container.astro';
+
+const necklaces = data.filter((item) => item.category === "Collar")
+
 ---
 
 <Layout title="Necklaces">
@@ -18,12 +16,11 @@ import ItemsContainer from '../components/items-container.astro';
         <Aside/>
 
         <ItemsContainer>
-            <Card imageName={image01} description='image 01' name="Necklace 01" category="Necklaces" price="150"/>
-            <Card imageName={image02} description='image 02' name="Necklace 01" category="Necklaces" price="150"/>
-            <Card imageName={image03} description='image 03' name="Necklace 01" category="Necklaces" price="150"/>
-            <Card imageName={image04} description='image 04' name="Necklace 01" category="Necklaces" price="150"/>
-            <Card imageName={image05} description='image 05' name="Necklace 01" category="Necklaces" price="150"/>
-            <Card imageName={image06} description='image 06' name="Necklace 01" category="Necklaces" price="150"/>
+            {
+                necklaces.map(item=> (
+                    <Card description={item.description} imageName={item.imageName} category={item.category} name={item.name} price={item.price}/>
+                ))
+            }
         </ItemsContainer>
     </Main>
 </Layout>
