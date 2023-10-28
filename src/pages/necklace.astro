@@ -13,6 +13,7 @@ const necklaces = data.filter((item) => item.category === "Collar")
 
 <Layout title="Necklaces">
     <Main>
+        <h1>Necklaces</h1>
         <Aside/>
 
         <ItemsContainer>
@@ -34,26 +35,6 @@ const necklaces = data.filter((item) => item.category === "Collar")
         font-weight: bold;
     }
 
-    .grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
-        grid-auto-rows: 1fr;
-    } 
 
-    .grid-container .card figure {
-        padding: 4rem 6rem;
-        transition: all ease 0.3s;
-    }
-
-    .grid-container .card figure:hover{
-        transform: scale(0.98);
-    }
-
-    .grid-container .card figure img {
-        width: 100%;
-        height: 320px;
-        object-fit: cover;
-        border-radius: 2rem;
-    }
 
 </style>
