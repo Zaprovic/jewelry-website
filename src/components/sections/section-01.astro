@@ -6,7 +6,7 @@ import logoImage from '../../images/milano-joyeria.jpg';
 ---
 
 <section>
-    <figure>
+    <figure class="main-figure">
         <div class="image-01">
             <Image src={image01} alt="Description here"/>
         </div>
@@ -45,8 +45,7 @@ import logoImage from '../../images/milano-joyeria.jpg';
         display: grid;
         gap: 8rem;
         place-items: center;
-        padding-inline: 3.6rem;
-        margin-top: 8rem;
+        padding: 6rem 3.6rem ;
     }
 
     .title-container p {
@@ -55,9 +54,13 @@ import logoImage from '../../images/milano-joyeria.jpg';
         font-weight: lighter;
     }
 
-    figure img {
+    .main-figure {
         width: 100%;
-        height: auto;
+    }
+
+    .main-figure img {
+        width: 100%;
+        height: 360px;
         max-width: 678px;
         object-fit: cover;
     }
@@ -90,21 +93,27 @@ import logoImage from '../../images/milano-joyeria.jpg';
 
     @media (min-width: 678px) {
 
-        figure {
+        .main-figure {
             height: 100%;
         }
         .image-01{
             display: none;
         }
         .image-02 {
-            display: block;
+            display: flex;
+            width: 100%;
             height: 100%;
         }
 
-        .image-02 > * {
+        .image-02 > img {
             height: 100%;
             object-fit: cover;
         }
+
+        /* .image-02 > * {
+            height: 100%;
+            object-fit: cover;
+        } */
 
         section {
             display: grid;
@@ -124,7 +133,6 @@ import logoImage from '../../images/milano-joyeria.jpg';
             align-items: center;
             justify-content: center;
             padding: 4rem 8rem;
-            margin-bottom: 8rem;
         }
 
         .milano-joyeria {
