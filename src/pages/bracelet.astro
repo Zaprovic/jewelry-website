@@ -9,15 +9,16 @@ import Main from '../components/main.astro';
 
 // import { bracelets } from "../stores/bracelets";
 import { data } from "../../public/data";
+import PageTitle from "../components/page-title.astro";
 
-const bracelets = data.filter((item)=> item.category === "Brazalete")
+const bracelets = data.filter((item)=> item.category === "Pulsera")
 ---
 
 <Layout title="Bracelets">
 
     <Main>
         <Aside/>
-        <h1>Bracelets</h1>
+        <PageTitle name="Pulseras"/>
 
         <ItemsContainer>
 
@@ -33,15 +34,5 @@ const bracelets = data.filter((item)=> item.category === "Brazalete")
 
 </Layout>
 
-<style is:global>
 
-    h1 {
-        text-align: center;
-        font-size: 5.2rem;
-        margin-top: 4rem;
-        font-weight: bold;
-    }
-
-
-</style>
 

@@ -4,7 +4,8 @@ import Card from "../components/card.astro";
 import ItemsContainer from "../components/items-container.astro";
 import Main from "../components/main.astro";
 import Layout from "../layouts/Layout.astro";
-import outputArray, { data } from "../../public/data"
+import { data } from "../../public/data"
+import PageTitle from "../components/page-title.astro";
 
 console.log(data.length)
 
@@ -13,7 +14,7 @@ console.log(data.length)
 <Layout title="All">
     <Main>
         <Aside/>
-        <h1>All products</h1>
+        <PageTitle name="All"/>
 
         <ItemsContainer>
 

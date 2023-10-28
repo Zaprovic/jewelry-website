@@ -6,13 +6,14 @@ import Layout from "../layouts/Layout.astro";
 
 import { data } from "../../public/data";
 import Card from "../components/card.astro";
+import PageTitle from "../components/page-title.astro";
 
 const rings = data.filter(item => item.category === "Anillo")
 ---
 
 <Layout title="Rings">
     <Main>
-        <h1>Rings</h1>
+        <PageTitle name="Anillos"/>
         <Aside/>
 
         <ItemsContainer>
@@ -25,13 +26,4 @@ const rings = data.filter(item => item.category === "Anillo")
     </Main>
     
 </Layout>
-
-<style>
-    h1 {
-        text-align: center;
-        font-size: 5.2rem;
-        margin-top: 4rem;
-        font-weight: bold;
-    }
-</style>
 

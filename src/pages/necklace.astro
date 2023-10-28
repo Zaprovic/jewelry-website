@@ -6,6 +6,7 @@ import Layout from "../layouts/Layout.astro";
 import { data } from "../../public/data";
 import Card from "../components/card.astro";
 import ItemsContainer from '../components/items-container.astro';
+import PageTitle from "../components/page-title.astro";
 
 const necklaces = data.filter((item) => item.category === "Collar")
 
@@ -13,7 +14,7 @@ const necklaces = data.filter((item) => item.category === "Collar")
 
 <Layout title="Necklaces">
     <Main>
-        <h1>Necklaces</h1>
+        <PageTitle name="Collares"/>
         <Aside/>
 
         <ItemsContainer>
@@ -25,16 +26,3 @@ const necklaces = data.filter((item) => item.category === "Collar")
         </ItemsContainer>
     </Main>
 </Layout>
-
-<style is:global>
-
-    h1 {
-        text-align: center;
-        font-size: 5.2rem;
-        margin-top: 4rem;
-        font-weight: bold;
-    }
-
-
-
-</style>

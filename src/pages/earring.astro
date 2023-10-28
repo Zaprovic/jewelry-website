@@ -6,6 +6,7 @@ import Main from "../components/main.astro";
 import Layout from "../layouts/Layout.astro";
 
 import { data } from "../../public/data";
+import PageTitle from "../components/page-title.astro";
 
 const earrings = data.filter((item)=> item.category === "Areta")
 ---
@@ -13,7 +14,7 @@ const earrings = data.filter((item)=> item.category === "Areta")
 <Layout title="Earrings">
 
     <Main>
-        <h1>Earrings</h1>
+        <PageTitle name="Aretas"/>
         <Aside/>
 
         <ItemsContainer>
@@ -26,12 +27,4 @@ const earrings = data.filter((item)=> item.category === "Areta")
     </Main>
 </Layout>
 
-<style>
-    h1 {
-        text-align: center;
-        font-size: 5.2rem;
-        margin-top: 4rem;
-        font-weight: bold;
-    }
-</style>
 
